@@ -18,7 +18,8 @@
 		"vscode-icons-team.vscode-icons",
 		"editorconfig.editorconfig"
 	],
-	"postCreateCommand": "dotnet restore RestSharp.sln && dotnet build RestSharp.sln --configuration Release --no-restore && dotnet test RestSharp.sln --configuration Release --no-build",
+	// "postCreateCommand": "dotnet restore RestSharp.sln && dotnet build RestSharp.sln --configuration Release --no-restore && dotnet test RestSharp.sln --configuration Release --no-build",
+	"postCreateCommand": "sudo apt-get install wget && wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-3.1",
 	"build": {
 		"dockerfile": "Dockerfile"
 	}
